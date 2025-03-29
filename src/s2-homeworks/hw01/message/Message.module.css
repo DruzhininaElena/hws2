@@ -41,14 +41,15 @@
     content: '';
     position: absolute;
     z-index: -1;
-    right: -18px;
+    right: -30px;
     bottom: -2px;
 
-    width: 19px;
+    width: 30px;
     height: 30px;
-    border-radius: 0 0 0 100%;
+    border-radius: 0 0 0 69%;
     background-color: #fff;
 }
+
 
 .name {
     text-align: end;
