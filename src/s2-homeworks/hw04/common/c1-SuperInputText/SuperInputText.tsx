@@ -1,10 +1,4 @@
-import React, {
-    ChangeEvent,
-    DetailedHTMLProps,
-    InputHTMLAttributes,
-    KeyboardEvent,
-    ReactNode,
-} from 'react'
+import {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent, ReactNode,} from 'react'
 import s from './SuperInputText.module.css'
 
 // тип пропсов обычного инпута
@@ -21,11 +15,11 @@ type SuperInputTextPropsType = Omit<DefaultInputPropsType, 'type'> & {
     spanClassName?: string
 }
 
-const SuperInputText: React.FC<SuperInputTextPropsType> = (
+const SuperInputText = (
     {
         onChange,
         onChangeText,
-        onKeyPress,
+        onKeyDown,
         onEnter,
         error,
         className,
@@ -33,15 +27,15 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         id,
 
         ...restProps // все остальные пропсы попадут в объект restProps
-    }
+    }: SuperInputTextPropsType
 ) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e) // если есть пропс onChange, то передать ему е (поскольку onChange не обязателен)
 
         onChangeText?.(e.currentTarget.value)
     }
-    const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
-        onKeyPress?.(e)
+    const onKeyDownCallback = (e: KeyboardEvent<HTMLInputElement>) => {
+        onKeyDown?.(e)
 
         onEnter && // если есть пропс onEnter
         e.key === 'Enter' && // и если нажата кнопка Enter
@@ -60,7 +54,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
                 id={id}
                 type={'text'}
                 onChange={onChangeCallback}
-                onKeyPress={onKeyPressCallback}
+                onKeyDown={onKeyDownCallback}
                 className={finalInputClassName}
                 {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
             />

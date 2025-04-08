@@ -1,4 +1,4 @@
-import React, {
+import {
     ChangeEvent,
     DetailedHTMLProps,
     InputHTMLAttributes,
@@ -14,7 +14,7 @@ type SuperCheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
     spanClassName?: string
 }
 
-const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
+const SuperCheckbox = (
     {
         onChange,
         onChangeChecked,
@@ -24,11 +24,13 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         id,
 
         ...restProps // все остальные пропсы попадут в объект restProps
-    }
+    } : SuperCheckboxPropsType
 ) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         // задачка на написание онченджа
+        onChange?.(e)
 
+        onChangeChecked?.(e.currentTarget.checked)
     }
 
     const finalInputClassName = s.checkbox
