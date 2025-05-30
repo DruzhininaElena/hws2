@@ -1,3 +1,15 @@
 .loader {
-    /*свг и/или анимация*/
+    background-image: url("imgs/loading-spiner.svg");
+    width: 90px;
+    height: 90px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
