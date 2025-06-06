@@ -1,16 +1,19 @@
 [data-theme='1'] {
     --color: #000000;
     --background: #FFFFFF;
+    --borderColor: #323232
 }
 
 [data-theme='2'] {
     --color: #000000;
     --background: #DDEEFF;
+    --borderColor: #323232
 }
 
 [data-theme='3'] {
     --color: #FFFFFF;
     --background: #212A34;
+    --borderColor: #c2c2c2
 }
 
 html {
@@ -19,5 +22,14 @@ html {
 }
 
 .select {
-
+    color: var(--color);
+    border: 1px solid var(--borderColor);
+    border-radius: 2px;
+    width: 171px;
+    height: 36px;
+    appearance: none;
+    background-color: transparent;
+    background-image: url("./imgs/chevron-down-outline.svg");
+    background-repeat: no-repeat;
+    background-position: right 6px center;
 }
