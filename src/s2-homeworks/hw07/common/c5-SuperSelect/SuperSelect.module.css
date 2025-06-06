@@ -11,6 +11,9 @@
     outline: none;
 }
 
+.option {
+    color: #000;
+}
 
 .option:hover {
 }
