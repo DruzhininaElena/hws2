@@ -1,3 +1,5 @@
+import {AppStoreType} from '../../hw10/bll/store';
+
 const initState = {
     themeId: 1,
 }
