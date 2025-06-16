@@ -27,9 +27,9 @@ html {
     border-radius: 2px;
     width: 171px;
     height: 36px;
-    appearance: none;
     background-color: transparent;
-    background-image: url("./imgs/chevron-down-outline.svg");
-    background-repeat: no-repeat;
-    background-position: right 6px center;
+    /*appearance: none;*/
+    /*background-image: url("./imgs/chevron-down-outline.svg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: right 6px center;*/
 }
