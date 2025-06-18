@@ -1,7 +1,19 @@
-.tech {
+.inputWrapper {
+    position: relative;
+    width: 372px;
+    margin-bottom: 19px;
+}
 
+.tech {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .loading {
-
+    font-weight: 300;
+    font-size: 14px;
+    color: #4d4d4d;
+    position: absolute;
+    bottom: -28px;
+    right: 0;
 }
